@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:preferences_app/screens/screens.dart';
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -14,7 +16,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Container(),
+      initialRoute: HomeScreen.routerName,
+      routes: {
+        HomeScreen.routerName     : (_) => const HomeScreen(),
+        SettingsScreen.routerName : (_) => const SettingsScreen(),
+      },
     );
   }
 }
